@@ -12,6 +12,7 @@ import { terser } from "rollup-plugin-terser";
 import ttypescript from "ttypescript";
 import typescript from "rollup-plugin-typescript2";
 import minimist from "minimist";
+import copy from "rollup-plugin-copy";
 
 // Get browserslist config and remove ie from es build targets
 const esbrowserslist = fs
@@ -125,6 +126,9 @@ if (!argv.format || argv.format === "es") {
           ],
         ],
       }),
+      copy({
+        targets: [{ src: "src/assets/styles/index.css", dest: "dist" }],
+      }),
     ],
   };
   buildFormats.push(esConfig);
@@ -152,6 +156,9 @@ if (!argv.format || argv.format === "cjs") {
       vue(baseConfig.plugins.vue),
       ...baseConfig.plugins.postVue,
       babel(baseConfig.plugins.babel),
+      copy({
+        targets: [{ src: "src/assets/styles/index.css", dest: "dist" }],
+      }),
     ],
   };
   buildFormats.push(umdConfig);
@@ -183,6 +190,9 @@ if (!argv.format || argv.format === "iife") {
         output: {
           ecma: 5,
         },
+      }),
+      copy({
+        targets: [{ src: "src/assets/styles/index.css", dest: "dist" }],
       }),
     ],
   };

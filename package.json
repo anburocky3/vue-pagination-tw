@@ -1,6 +1,6 @@
 {
   "name": "vue-pagination-tw",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Simple Vue Pagination component that can be used in any project with range & ui customization.",
   "main": "dist/vue-pagination-tw.ssr.js",
   "browser": "dist/vue-pagination-tw.esm.js",
@@ -11,6 +11,13 @@
     "dist/*",
     "src/**/*.vue"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/vue-pagination-tw.esm.js",
+      "require": "./dist/vue-pagination-tw.ssr.js"
+    },
+    "./styles": "./dist/index.css"
+  },
   "sideEffects": false,
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.ts",
@@ -19,7 +26,8 @@
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
-    "postbuild": "rimraf ./dist/types/dev ./dist/types/src/entry.d.ts"
+    "postbuild": "rimraf ./dist/types/dev ./dist/types/src/entry.d.ts",
+    "style": "npx tailwindcss -i ./src/assets/styles/tailwind.css -o ./src/assets/styles/index.css --minify"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -37,13 +45,15 @@
     "@zerollup/ts-transform-paths": "^1.7.18",
     "cross-env": "^7.0.3",
     "minimist": "^1.2.5",
-    "postcss": "^8.2.10",
+    "postcss": "^8.4.5",
     "rimraf": "^3.0.2",
     "rollup": "^2.52.8",
-    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "0.31.1",
     "rollup-plugin-vue": "^6.0.0",
+    "tailwindcss": "^3.0.7",
     "ttypescript": "^1.5.12",
     "typescript": "^4.0.3",
     "vue": "^3.2.26"

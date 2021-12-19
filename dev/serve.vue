@@ -1,6 +1,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import VuePaginationTw from '@/components/vue-pagination-tw.vue';
+import "../src/assets/styles/tailwind.css"
 
 export default defineComponent({
   name: 'ServeDev',
@@ -15,9 +16,9 @@ export default defineComponent({
     }
   },
   mounted() {
-    let externalScript = document.createElement('script')
-    externalScript.setAttribute('src', 'https://cdn.tailwindcss.com')
-    document.head.appendChild(externalScript)
+    // let externalScript = document.createElement('script')
+    // externalScript.setAttribute('src', 'https://cdn.tailwindcss.com')
+    // document.head.appendChild(externalScript)
   }
 });
 </script>

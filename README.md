@@ -1,10 +1,25 @@
-# vue-pagination-tw
+# Vue Tailwind Pagination (`vue-pagination-tw`)
 
-[![npm version](https://badge.fury.io/js/vue-pagination-tw.svg)](https://badge.fury.io/js/vue-pagination-tw) [![Build Status](https://travis-ci.org/anburocky3/vue-pagination-tw.svg?branch=main)](https://travis-ci.org/anburocky3/vue-pagination-tw) [![Code Climate](https://codeclimate.com/github/anburocky3/vue-pagination-tw/badges/gpa.svg)](https://codeclimate.com/github/anburocky3/vue-pagination-tw)
+<a href="LICENSE">
+  <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="Software License" />
+</a>
+<a href="https://github.com/anburocky3/vue-pagination-tw/issues">
+  <img src="https://img.shields.io/github/issues/anburocky3/vue-pagination-tw.svg" alt="Issues" />
+</a>
+<a href="https://npmjs.org/package/vue-pagination-tw">
+  <img src="https://img.shields.io/npm/v/vue-pagination-tw.svg?style=flat-squar" alt="NPM" />
+</a>
+<a href="https://www.npmjs.com/package/vue-pagination-tw">
+  <img src="https://img.shields.io/npm/dw/vue-pagination-tw" alt="Downloads" />
+</a>
 
 [![NPM](https://nodei.co/npm/vue-pagination-tw.png)](https://nodei.co/npm/vue-pagination-tw/)
 
 Simple Vue Pagination component that can be used in any project with range &amp; ui customization.
+
+## screenshots
+
+![Screenshot Demo](./screenshots/vue-pagination-tw-demo)
 
 [Online demo](#) (will be updated shortly)
 
@@ -16,6 +31,18 @@ Install the npm package.
 
 ```js
 $ npm install vue-pagination-tw --save
+```
+
+or yarn package
+
+```js
+$ yarn add -D vue-pagination-tw
+```
+
+### To Look good, Add the CSS files after initializing:
+
+```js
+import "vue-pagination-tw/styles"; // tailwind basic styles
 ```
 
 Register the component.
@@ -88,3 +115,9 @@ So this is also avaliable
 - [ ] Make different versions of paginations (xs, md, lg, xlg)
 - [ ] Change Pagination ui templates directly from initialization.
 - [ ] Support for make different ui styles by default.
+
+#### Authors:
+
+- Anbuselvan Rocky ([Facebook](https://fb.me/anburocky3))
+
+#### License: [MIT](./LICENSE.md)
