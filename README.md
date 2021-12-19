@@ -1,4 +1,4 @@
-# Vue Tailwind Pagination (`vue-pagination-tw`)
+# Vue Tailwind Pagination
 
 <a href="LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="Software License" />
@@ -11,17 +11,17 @@
 </a>
 <a href="https://www.npmjs.com/package/vue-pagination-tw">
   <img src="https://img.shields.io/npm/dw/vue-pagination-tw" alt="Downloads" />
-</a>
+</a> 
 
 [![NPM](https://nodei.co/npm/vue-pagination-tw.png)](https://nodei.co/npm/vue-pagination-tw/)
 
 Simple Vue Pagination component that can be used in any project with range &amp; ui customization.
 
-## screenshots
+## Screenshots
 
-![Screenshot Demo](./screenshots/vue-pagination-tw-demo)
+![Screenshot Demo](./screenshots/vue-pagination-tw-demo.gif)
 
-[Online demo](#) (will be updated shortly)
+[Online demo](https://stackblitz.com/edit/vue-y2ufn1) (Feel free to create your own.)
 
 ## Installation
 
