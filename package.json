@@ -1,6 +1,6 @@
 {
   "name": "vue-pagination-tw",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple Vue Pagination component that can be used in any project with range & ui customization.",
   "main": "dist/vue-pagination-tw.ssr.js",
   "browser": "dist/vue-pagination-tw.esm.js",
