@@ -16,9 +16,9 @@ export default defineComponent({
     }
   },
   mounted() {
-    // let externalScript = document.createElement('script')
-    // externalScript.setAttribute('src', 'https://cdn.tailwindcss.com')
-    // document.head.appendChild(externalScript)
+    let externalScript = document.createElement('script')
+    externalScript.setAttribute('src', 'https://cdn.tailwindcss.com')
+    document.head.appendChild(externalScript)
   }
 });
 </script>
@@ -33,6 +33,8 @@ export default defineComponent({
           :per-page="6"
           @page-changed="console.log('s')"
           :go-button="false"
+          borderActiveColor="border-red-500"
+          borderTextActiveColor="text-red-500"
         />
       </div>
     </div>

@@ -30,6 +30,14 @@ const props = defineProps({
     type: String,
     default: 'Go'
   },
+  borderActiveColor: {
+    type: String,
+    default: 'border-indigo-500'
+  },
+  borderTextActiveColor: {
+    type: String,
+    default: 'text-indigo-500'
+  },
   styled: {
     type: String,
     default: 'simple'
@@ -141,9 +149,10 @@ const calculatedPages = computed(() => {
           v-for="(page, index) in calculatedPages"
           :key="index"
           class="bg-white border border-gray-300 text-gray-500 relative inline-flex items-center px-4 py-2 text-sm font-medium"
-          :class="{ 'z-10 bg-indigo-50 border-indigo-500 text-indigo-600': currentPage == page }"
+          :class="{ [`z-10 bg-indigo-50 !${borderActiveColor} !${borderTextActiveColor}`]: currentPage == page }"
           @click.prevent="changePage(page)"
         >{{ page }}</a>
+        <!-- :class="currentPage === page ? `z-10 bg-indigo-50 !${borderActiveColor} !${borderTextActiveColor}` : '' }" -->
         <span
           class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700"
           v-if="hasLast()"
@@ -197,7 +206,8 @@ const calculatedPages = computed(() => {
       <input
         type="text"
         placeholder="Page no"
-        class="w-28 px-4 py-1 rounded-l outline-none border-t-2 border-l-2 border-b-2 focus:border-indigo-500 placeholder:text-xs uppercase font-semibold"
+        class="w-28 px-4 py-1 rounded-l outline-none border-t-2 border-l-2 border-b-2 placeholder:text-xs uppercase font-semibold"
+        :class="`focus:${borderActiveColor}`"
         v-model="pageInput"
       />
       <button

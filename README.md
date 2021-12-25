@@ -11,7 +11,7 @@
 </a>
 <a href="https://www.npmjs.com/package/vue-pagination-tw">
   <img src="https://img.shields.io/npm/dw/vue-pagination-tw" alt="Downloads" />
-</a> 
+</a>
 
 [![NPM](https://nodei.co/npm/vue-pagination-tw.png)](https://nodei.co/npm/vue-pagination-tw/)
 
@@ -107,6 +107,21 @@ So this is also avaliable
   @pageChanged="functionName"
   :goButton="false"
   styled="centered"
+/>
+```
+
+If you want to specify custom `Active Border color & text color`, you can do it like this:
+
+```html
+<VuePaginationTw
+  :totalItems="20"
+  :currentPage="1"
+  :perPage="6"
+  @pageChanged="functionName"
+  :goButton="false"
+  styled="centered"
+  borderActiveColor="border-red-500"
+  borderTextActiveColor="text-red-500"
 />
 ```
 
