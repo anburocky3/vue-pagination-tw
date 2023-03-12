@@ -50,7 +50,7 @@ const emit = defineEmits<{
 
 const pageInput = ref<number>(1)
 
-const totalPages = Math.ceil(props.totalItems / props.perPage)
+const totalPages = computed(() => Math.ceil(props.totalItems / props.perPage))
 
 const paginationFrom = computed(() => (props.currentPage - 1) * props.perPage + 1)
 
@@ -64,12 +64,12 @@ const isFirstPage = computed(() => {
 })
 
 const isLastPage = computed(() => {
-  return props.currentPage >= totalPages
+  return props.currentPage >= totalPages.value
 })
 
 // methods
 const changePage = (page: number) => {
-  if (page > 0 && page <= totalPages) {
+  if (page > 0 && page <= totalPages.value) {
     emit('page-changed', page)
   }
 }
@@ -82,7 +82,7 @@ const rangeStart = computed(() => {
 
 const rangeEnd = computed(() => {
   var end = (props.currentPage + props.pageRange)
-  return (end < totalPages) ? end : totalPages
+  return (end < totalPages.value) ? end : totalPages.value
 })
 
 const hasFirst = () => {
@@ -90,7 +90,7 @@ const hasFirst = () => {
 }
 
 const hasLast = () => {
-  return rangeEnd.value < totalPages
+  return rangeEnd.value < totalPages.value
 }
 
 const calculatedPages = computed(() => {
@@ -162,8 +162,8 @@ const calculatedPages = computed(() => {
           aria-current="page"
           class="bg-white border border-gray-300 text-gray-500 relative inline-flex items-center px-4 py-2 text-sm font-medium"
           v-if="hasLast()"
-          @click.prevent="changePage(totalPages)"
-        >{{ totalPages }}</a>
+          @click.prevent="changePage(totalPages.value)"
+        >{{ totalPages.value }}</a>
         <a
           href="#"
           class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
